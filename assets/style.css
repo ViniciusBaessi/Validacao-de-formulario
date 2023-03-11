@@ -5,10 +5,11 @@
 * {
     padding: 0;
     margin: 0;
+    
 }
 
 body {
-    background-image: url('assets/fundo-predios.jpg');
+    background-image: url('assets/predio.jpg');
 }
 
 header {
@@ -24,6 +25,7 @@ article {
     margin: 0px 8px;
     border-radius: 10px;
     padding: 10px;
+    
     
 }
 
