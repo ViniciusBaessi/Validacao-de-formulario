@@ -39,6 +39,7 @@ article {
     text-align: center;
     padding: 10px;
     font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .form_container {
@@ -48,18 +49,19 @@ article {
 .form label {
     font-size: 14px;
     font-family: 'Heebo', sans-serif;
+    padding-top: 10px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    padding: 30px 8px;
+    padding: 0px 8px;
 }
 
 
 .dados{
     margin-top: 7px;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 
     padding: 5px;
     border-radius: 15px;
@@ -67,6 +69,13 @@ article {
     border: 1px solid rgba(5, 88, 170, 0.685);
     cursor: pointer;
     background-color: white;
+}
+
+.form span {
+    font-size: 14px;
+    font-family: 'Heebo', sans-serif;
+    margin-bottom: 8px;
+    color: #e63636;
 }
 
 .enviar {
@@ -143,7 +152,7 @@ footer a{
 
     .dados{
         
-        margin-bottom: 30px;
+    
         padding: 10px;
         
     }
@@ -189,7 +198,7 @@ footer a{
 
     .dados{
         
-        margin-bottom: 30px;
+        
         padding: 10px;
         
     }
