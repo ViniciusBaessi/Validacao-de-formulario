@@ -10,4 +10,4 @@
 
 Segue abaixo a pré-visualização:
 
-<img src="" alt="" style="width:1150px;">
+<img src="" alt="https://github.com/ViniciusBaessi/Validacao-de-formulario/blob/main/assets/Preview%20do%20formul%C3%A1rio.png" style="width:1150px;">
