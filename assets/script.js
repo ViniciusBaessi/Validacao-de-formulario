@@ -1,30 +1,12 @@
-const CamposDoFormulario = document.querySelectorAll("[required]");
+const campos = document.querySelectorAll("[required]")
+console.log(campos)
 
-let cpf = document.getElementById('cpf')
+const spans = document.querySelectorAll('.span-required')
 
-
-cpf = cpf.value
-console.log(cpf)
-localStorage.setItem("champs",cpf)
-
-
-console.log(CamposDoFormulario)
-
-
-
-//Em resumo, assim que o usuário clicar no formulário, digitar e clicar fora do formulário, será executada a função (VerificaCampo) para validar o dado.
-
-CamposDoFormulario.forEach((campo) => {
-    campo.addEventListener("blur", () => VerificaCampo(campo));
-})
-
-function VerificaCampo(campo){
-    
-}
-
-
-
-
-function ValidaCPF (){
-
+function validanome () {
+    if (campos[0].value.length < 3 ) {
+        console.log('lararu')
+    } else {
+        console.log('Ohhh brabo')
+    }
 }

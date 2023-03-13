@@ -23,26 +23,31 @@
             
                     <!-- Nome -->
                     <label for="nome">Nome</label>
-                    <input class="dados" type="text" name="nome" id="nome" minlength="3" required >
+                    <input class="dados" type="text" name="nome" id="nome" minlength="3" required oninput="validanome ()">
+                    <span class="span-required">O nome deve ter no mínimo 3 caracteres</span>
             
                     <!-- Email -->
                     <label for="email">E-mail</label>
                     <input class="dados" type="email" name="email" id="email" minlength="4" required>
+                    <span class="span-required">Digite um email válido</span>
 
                     <!-- RG -->
                     <label for="rg">RG</label>
                     <input class="dados" type="text" name="rg" id="rg" required>
+                    <span class="span-required">Digite um RG válido</span>
 
                     <!-- CPF -->
                     <label for="cpf">CPF</label>
                     <input class="dados" type="text" name="cpf" id="cpf" minlength="11" maxlength="14" required pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"/>
+                    <span class="span-required">Digite um CPF válido</span>
             
                     <!-- Enviar -->
                     <label for="dtnasc">Data de Nascimento</label>
                     <input class="dados" type="date" name="dtnasc" id="dtnasc" required>
+                    <span class="span-required">Insira uma data válida</span>
 
                     <!-- Enviar -->
-                    <input class="enviar" type="submit" value="Enviar">
+                    <input class="enviar" type="submit" value="Enviar" onclick="EnviaDado ()">
                 </div>
             </fieldset>
             <section>
