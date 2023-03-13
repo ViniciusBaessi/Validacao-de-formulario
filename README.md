@@ -1,6 +1,6 @@
 # Validação de formulário (HTML + CSS + Javascript) 📝
 
-⚡ Criação de um formulário que armazena os dados inputados no localstorage presente no navegador do usuário. Por meio do javascript é feita a validação desses dados para averiguar a conformidade.
+⚡ Criação de um formulário responsivo que armazena os dados inputados no localstorage presente no navegador do usuário. Por meio do javascript é feita a validação desses dados para averiguar a conformidade.
 
 📲 Acesse em: https://validacao-de-formulario-bay.vercel.app/
 
