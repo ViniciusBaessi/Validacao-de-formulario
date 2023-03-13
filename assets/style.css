@@ -41,8 +41,13 @@ article {
     font-weight: 400;
 }
 
-.form p {
+.form_container {
+    border: none;
+}
+
+.form label {
     font-size: 14px;
+    font-family: 'Heebo', sans-serif;
 }
 
 .form {
@@ -87,10 +92,12 @@ article {
     align-items: flex-start;
     padding: 5px;
     margin-bottom: 30px;
+    
 }
 
 .check input{
     margin-right: 10px;
+
     
 }
 

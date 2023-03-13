@@ -17,32 +17,41 @@
             </div>
         </section>
 
-        <section class="form_container">
-            <div class="form">
-                <p>Nome</p>
-                <input class="dados" type="text" name="" id=""  required>
+        <form action="">
+            <fieldset class="form_container">
+                <div class="form">
+            
+                    <!-- Nome -->
+                    <label for="nome">Nome</label>
+                    <input class="dados" type="text" name="nome" id="nome" minlength="3" required >
+            
+                    <!-- Email -->
+                    <label for="email">E-mail</label>
+                    <input class="dados" type="email" name="email" id="email" minlength="4" required>
 
-                <p>Email</p>
-                <input class="dados" type="text" name="" id=""  required>
-                <p>RG</p>
-                <input class="dados" type="text" name="" id=""  required>
+                    <!-- RG -->
+                    <label for="rg">RG</label>
+                    <input class="dados" type="text" name="rg" id="rg" required>
 
-                <p>CPF</p>
-                <input class="dados" type="number" name="" id=""  required>
-                
-                <p>Data de nascimento</p>
-                <input class="dados" type="date" name="" id="" required>
+                    <!-- CPF -->
+                    <label for="cpf">CPF</label>
+                    <input class="dados" type="number" name="cpf" id="cpf" minlength="11" maxlength="14" required>
+            
+                    <!-- Enviar -->
+                    <label for="dtnasc">Data de Nascimento</label>
+                    <input class="dados" type="date" name="dtnasc" id="dtnasc" required>
 
-                <input class="enviar" type="submit" value="Enviar">
-            </div>
-        </section>
-
-        <section>
-            <div class="check">
-                <input class="checkbox" type="checkbox" name="" id="" required>
-                <p>Li e estou ciente quanto às condições de tratamento dos meus dados conforme descrito. Os dados serão armazenados no localstorage do seu navegador, portanto não serão enviados para lugar algum, se tratando apenas de uma didática e todo o código estará disponível no repositório do Github <a href="https://github.com/ViniciusBaessi/Validacao-de-formulario" target="_blank">clicando aqui.</a>  </p>
-            </div>
-        </section>
+                    <!-- Enviar -->
+                    <input class="enviar" type="submit" value="Enviar">
+                </div>
+            </fieldset>
+            <section>
+                <div class="check">
+                    <input class="checkbox" type="checkbox" name="" id="" required>
+                    <p>Li e estou ciente quanto às condições de tratamento dos meus dados conforme descrito. Os dados serão armazenados no localstorage do seu navegador, portanto não serão enviados para lugar algum, se tratando apenas de uma didática. Todo o código estará disponível no repositório do Github <a href="https://github.com/ViniciusBaessi/Validacao-de-formulario" target="_blank">clicando aqui.</a>  </p>
+                </div>
+            </section>
+        </form>
 
     </article>
 
