@@ -196,6 +196,10 @@ footer a{
         padding: 30px 230px;
     }
 
+    .form label {
+        margin-top: 10px;
+    }
+
     .dados{
         
         
@@ -206,6 +210,7 @@ footer a{
     .enviar {
         margin-top: 10px;
         padding: 15px 0px;
+        margin-top: 40px;
     }
 
     .check {
