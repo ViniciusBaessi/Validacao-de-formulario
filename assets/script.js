@@ -1,5 +1,13 @@
 const CamposDoFormulario = document.querySelectorAll("[required]");
 
+let cpf = document.getElementById('cpf')
+
+
+cpf = cpf.value
+console.log(cpf)
+localStorage.setItem("champs",cpf)
+
+
 console.log(CamposDoFormulario)
 
 
@@ -11,5 +19,12 @@ CamposDoFormulario.forEach((campo) => {
 })
 
 function VerificaCampo(campo){
-    alert("Sua mensagem aqui");
+    
+}
+
+
+
+
+function ValidaCPF (){
+
 }
