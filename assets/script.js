@@ -7,11 +7,6 @@ const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 const form = document.querySelector('.form')
 
 
-let arraymult = [10,9,8,7,6,5,4,3,2]
-let arraycpf = []
-let arraysoma = []
-
-let contador = 0
 
 
 //Ao clicar no botão enviar, todas as validações serão feitas ao mesmo tempo, através de um ouvinte de eventos no (form)
@@ -51,9 +46,7 @@ function validanome () {
     } else {
         removeErro (0)
     }
-
 }
-
 
 //Aplica uma validação com base no REGEX criado para o email e retorna um erro caso o dado não esteja em conformidade
 
@@ -66,62 +59,106 @@ function validaemail () {
 }
 
 
+
+
+
+
 function validaCPF () {
+
+    console.clear()
+
 
 
 
     //Pega os valores digitados no campo CPF e remove os carcteres especiais (\, ., -), após esse tratamento, o dado é armazenado na variável CPF
+    
     const cpf = campos[3].value.replace(/\.|-/g, "")
+    console.log(cpf)
 
+
+    digito1(cpf)
+    digito2(cpf)
+
+
+    if (digito1(cpf) || digito2(cpf)) {
+        aplicaErro(3)
+    } else {
+        removeErro (3)
+    }
+    
+   
+}
+
+
+
+
+
+function digito1(cpf) {
+    
     
 
-    console.log (cpf)
+    let soma = 0;
+    let multiplicador = 10;
 
 
-    //Insere os primeiros 9 digitos dentro do array
-    arraycpf = cpf.slice(0, 9).split("")
+    /*Fazendo a multiplicação dos 9 primeiros digitos do CPF, exemplo
 
-    console.log (arraycpf)
+
+    CPF: 123. 456. 789
+    Multiplicador : 10, 9, 8, 7, 6, 5, 4, 3, 2
+    
+    Multiplicação (1x10) (2x9) (3x8) (4x7) ... (9x2)
+
+
+    E por fim somando o resultado de todas as multiplicações
+
+    */
+
+
+    for (let tamanho = 0; tamanho < 9; tamanho++) {
+        soma += cpf[tamanho] * multiplicador;
+        multiplicador--
+    }
+
+
+    //Multiplicando o resultado da soma por 10 e pegando o resto da sua duvisão por 11, por fim o valor será armazenado na variável (soma)
+    soma = (soma * 10) % 11;
+
+    //Se o resto da divisão for igual a 10 ou 11, o valor da variável soma seria 0
+
+    if (soma == 10 || soma == 11) {
+        soma = 0;
+    }
+
+    console.log(`Esse é o primeiro digito validado ${soma}`)
     
 
-    console.log(arraymult)
+    //Se último digito do for diferente de soma retorna TRUE, se não retorna FALSE
+    return soma != cpf[9];
+    
+}
 
+
+function digito2(cpf) {
+
+    let soma = 0;
+    let multiplicador = 11;
+
+    for (let tamanho = 0; tamanho < 10; tamanho++) {
+        soma += cpf[tamanho] * multiplicador;
+        multiplicador--
+    }
+
+    soma = (soma * 10) % 11;
+
+
+    if (soma == 10 || soma == 11) {
+        soma = 0;
+    }
+
+    console.log(`Esse é o segundo digito validado ${soma}`)
 
     
-        
-        // O (arraysoma) recebe o resultado da multiplicação entre o (arraycpf) e o (arraymult)
-        arraysoma[contador] = arraycpf[contador] * arraymult[contador]
-
-        
-        contador = contador + 1
-    
-
-        
-        //Se o arraysoma for maior que 11, remova as duas casas, pois precisarei apenas dos primeiros 9 caracteres
-        if ( arraysoma.length == 11) {
-            arraysoma.splice(-2, 2)
-            console.log(arraysoma)
-
-
-            //For para somar toos os valores de (arraysoma)
-
-            let soma = 0;
-            for (let i = 0; i < arraysoma.length; i++) {
-              soma += arraysoma[i];
-            }
-
-
-            //A variável soma recebe o resto da divisão de (arraysoma) por 11, subtraído por 8
-            soma = (soma % 11) - 8
-            
-           
-
-            /*
-            11-8 <= 9 TRUE
-
-            != 11-8 <= 9 FALSE
-            */
-       
-        }
-
+    return soma != cpf[10];
+ 
 }
