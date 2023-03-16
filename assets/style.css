@@ -88,6 +88,8 @@ article {
 
 .enviar {
     margin-top: 20px;
+
+    margin-bottom: 30px;
     padding: 10px 0px;
 
     font-family: 'Heebo', sans-serif;
@@ -131,6 +133,7 @@ article {
     font-weight: bold;
     color: rgb(4, 85, 167);
 }
+
 
 footer {
     font-family: 'Teko', sans-serif;
@@ -178,7 +181,7 @@ footer a{
 
     #check{
         margin-top: 10px;
-        padding: 0px 60px;
+        padding: 0px 30px;
     }
 
     .check p{
@@ -208,7 +211,7 @@ footer a{
     }
 
     .form {
-        padding: 30px 230px;
+        padding: 30px 230px 0px 230px;
     }
 
     .form label {

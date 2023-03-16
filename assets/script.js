@@ -6,6 +6,7 @@ const checkbox = document.querySelectorAll('#checkbox')
 
 const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
+
 const form = document.querySelector('#form')
 const button = document.querySelector('.enviar')
 
@@ -21,8 +22,10 @@ button.addEventListener('click', function(event) {
 
     validanome () 
     validaemail ()
+    validarg ()
     validaCPF ()
-    
+    validaData ()
+
     validacheck () 
 
     
@@ -73,7 +76,22 @@ function validaemail () {
 }
 
 
+function validarg () {
 
+    const rg = campos[2].value.replace(/\.|-|\//g, "")
+
+
+   console.log(rg.length)
+
+   if (rg.length < 9 || rg.length > 9 ) {
+
+        aplicaErro(2)
+    } else {
+        removeErro(2)
+    }
+    
+    
+}
 
 
 
@@ -176,6 +194,24 @@ function digito2(cpf) {
     return soma != cpf[10];
  
 }
+
+
+
+
+
+
+
+
+
+function validaData () {
+
+    const dataNascimento = new Date(campos[4].value);
+    
+    
+    console.log(dataNascimento)
+}
+
+
 
 function validacheck () {
 
