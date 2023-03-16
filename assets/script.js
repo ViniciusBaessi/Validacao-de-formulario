@@ -2,20 +2,31 @@ const campos = document.querySelectorAll("[required]")
 
 const spans = document.querySelectorAll('.span-required')
 
+const checkbox = document.querySelectorAll('.checkbox')
+
 const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-const form = document.querySelector('.form')
+const form = document.querySelector('#form')
+const button = document.querySelector('.enviar')
 
 
 
 
 //Ao clicar no botão enviar, todas as validações serão feitas ao mesmo tempo, através de um ouvinte de eventos no (form)
-form.addEventListener('submit', (event) => {
+button.addEventListener('click', function(event) {
     event.preventDefault();
-    validanome ();
-    validaemail ();
-    console.log('erro')
-});
+
+
+    console.log('Botão clicado!');
+
+    validanome () 
+    validaemail ()
+    validaCPF ()
+    validacheck ()
+
+
+  });
+
 
 
 
@@ -161,4 +172,16 @@ function digito2(cpf) {
     
     return soma != cpf[10];
  
+}
+
+function validacheck () {
+
+   
+        if (!checkbox.checked) {
+            aplicaErro(5)
+        } else {
+            removeErro(5)
+        }
+         
+
 }
