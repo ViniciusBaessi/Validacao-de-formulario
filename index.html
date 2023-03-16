@@ -44,20 +44,26 @@
                     <!-- Enviar -->
                     <label for="dtnasc">Data de Nascimento</label>
                     <input class="dados" type="date" name="dtnasc" id="dtnasc" required>
-                    <span class="span-required">Insira uma data válida</span>
+                    <span class="span-required">Apenas maiores de idade poderão acessar a plataforma</span>
 
                     <!-- Enviar -->
                     <button class="enviar" type="submit">Enviar</button>
-                    <span class="span-required">Você precisa aceitar os termos e condições.</span>
+                    
                     
             
                 </div>
             </fieldset>
 
-            <section>
+            <section class="check_container">
+
+                <span id="check" class="span-required">Você precisa aceitar os termos e condições.</span>
                 <div class="check">
+
                     
-                    <input class="checkbox" type="checkbox" name="" id="" required oninput="validacheck ()">
+                    <input class="checkbox" type="checkbox" name="" id="checkbox" required onclick="validacheck ()">
+
+
+
                     <p>Li e estou ciente quanto às condições de tratamento dos meus dados conforme descrito. Os dados serão armazenados no localstorage do seu navegador, portanto não serão enviados para lugar algum, se tratando apenas de uma didática. Todo o código estará disponível no repositório do Github <a href="https://github.com/ViniciusBaessi/Validacao-de-formulario" target="_blank">clicando aqui.</a>  </p>
                 </div>
             </section>

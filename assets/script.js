@@ -2,7 +2,7 @@ const campos = document.querySelectorAll("[required]")
 
 const spans = document.querySelectorAll('.span-required')
 
-const checkbox = document.querySelectorAll('.checkbox')
+const checkbox = document.querySelectorAll('#checkbox')
 
 const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
@@ -22,7 +22,10 @@ button.addEventListener('click', function(event) {
     validanome () 
     validaemail ()
     validaCPF ()
-    validacheck ()
+    
+    validacheck () 
+
+    
 
 
   });
@@ -176,12 +179,12 @@ function digito2(cpf) {
 
 function validacheck () {
 
-   
-        if (!checkbox.checked) {
-            aplicaErro(5)
-        } else {
-            removeErro(5)
-        }
-         
+    if(!checkbox[0].checked) {
+        aplicaErro(5);
+        console.log('Não foi preenchido')
+    } else {
+        removeErro(5);
+        console.log('Preenchido')
+    }
 
 }
