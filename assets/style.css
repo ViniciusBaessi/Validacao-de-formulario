@@ -82,6 +82,7 @@ article {
 #check{
     margin-top: 10px;
     padding: 0px 8px;
+    
 }
 
 
@@ -116,7 +117,7 @@ article {
 
 .check input{
     margin-right: 10px;
-
+    cursor: pointer;
     
 }
 

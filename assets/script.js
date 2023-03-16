@@ -6,17 +6,15 @@ const checkbox = document.querySelectorAll('#checkbox')
 
 const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-
 const form = document.querySelector('#form')
 const button = document.querySelector('.enviar')
 
 
-
-
-//Ao clicar no botão enviar, todas as validações serão feitas ao mesmo tempo, através de um ouvinte de eventos no (form)
+//Ao clicar no botão enviar, todas as validações serão feitas ao mesmo tempo, através de um ouvinte de eventos (click)
 button.addEventListener('click', function(event) {
     event.preventDefault();
 
+    console.clear()
 
     console.log('Botão clicado!');
 
@@ -24,15 +22,12 @@ button.addEventListener('click', function(event) {
     validaemail ()
     validarg ()
     validaCPF ()
-    validaData ()
+    validaIdade ()
 
     validacheck () 
 
-    
-
 
   });
-
 
 
 
@@ -53,8 +48,6 @@ function removeErro (index) {
 }
 
 
-
-
 // Se a quantidade de caracteres em (nome) for menor do que 3 o código aciona a função que habilita o span do HTML, pinta e pinta a borda de vermelho. ('O span é a mensagem de erro definida no HTML'). Do contrário, o erro é removido, bem com as suas características.
 
 function validanome () {
@@ -66,7 +59,6 @@ function validanome () {
 }
 
 //Aplica uma validação com base no REGEX criado para o email e retorna um erro caso o dado não esteja em conformidade
-
 function validaemail () {
     if(!emailRegex.test(campos[1].value)){
         aplicaErro(1)
@@ -76,12 +68,10 @@ function validaemail () {
 }
 
 
+//Remove os caracteres (-) (/) (.) caso o usuário digite e armazena somente os números. Se a quantidade de números for maior ou menor que 9. Aparece um erro na tela. O RG tem especificamente 9 dígitos.
 function validarg () {
 
     const rg = campos[2].value.replace(/\.|-|\//g, "")
-
-
-   console.log(rg.length)
 
    if (rg.length < 9 || rg.length > 9 ) {
 
@@ -94,19 +84,13 @@ function validarg () {
 }
 
 
-
 function validaCPF () {
-
-    console.clear()
-
-
 
 
     //Pega os valores digitados no campo CPF e remove os carcteres especiais (\, ., -), após esse tratamento, o dado é armazenado na variável CPF
     
     const cpf = campos[3].value.replace(/\.|-/g, "")
-    console.log(cpf)
-
+    
 
     digito1(cpf)
     digito2(cpf)
@@ -120,8 +104,6 @@ function validaCPF () {
     
    
 }
-
-
 
 
 
@@ -162,10 +144,8 @@ function digito1(cpf) {
         soma = 0;
     }
 
-    console.log(`Esse é o primeiro digito validado ${soma}`)
-    
 
-    //Se último digito do for diferente de soma retorna TRUE, se não retorna FALSE
+    //Se último digito do CPF for diferente de soma, retorna TRUE, se não retorna FALSE
     return soma != cpf[9];
     
 }
@@ -188,7 +168,6 @@ function digito2(cpf) {
         soma = 0;
     }
 
-    console.log(`Esse é o segundo digito validado ${soma}`)
 
     
     return soma != cpf[10];
@@ -197,30 +176,38 @@ function digito2(cpf) {
 
 
 
+function validaIdade () {
+
+    //Pega a data inserida pelo usuário e adiciona mais um dia pois o navegador estava dando problemas com o fuso-horário
+    const datanasc = new Date(campos[4].value)
+    datanasc.setDate(datanasc.getDate() + 1);
+
+    //Pega a data atual
+    const dataatual = new Date()
 
 
+    //Soma 18 anos em cima da data atual
+    const dataMais18 = new Date(datanasc.getUTCFullYear() + 18, datanasc.getUTCMonth(), datanasc.getUTCDate() - 1);
 
-
-
-
-function validaData () {
-
-    const dataNascimento = new Date(campos[4].value);
     
-    
-    console.log(dataNascimento)
+    //Se a data atual for igual ou menor que a data somada por 18. Aparece um erro. Em outras palavras, se o usuário for de menor, não poderá acessar a plataforma.
+    if (dataatual <= dataMais18) {
+        aplicaErro(4) 
+    } else {
+        removeErro(4) 
+    }
+
 }
 
 
 
 function validacheck () {
 
+    //Se o checkbox não for preenchido, aparece um erro na tela
     if(!checkbox[0].checked) {
         aplicaErro(5);
-        console.log('Não foi preenchido')
     } else {
         removeErro(5);
-        console.log('Preenchido')
     }
 
 }
