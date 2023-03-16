@@ -14,4 +14,4 @@ Segue abaixo a pré-visualização:
 
 <br>
 
-* Dica: Para ver os dados armazenandos no localstorage, aperte a tecla (F12) no navegador, na parte superir clique em (application), na parte esquerda procure a opção (storage) e clique em Local Storage, por fim clique na aba http://.... e poderá visualizar os dados que foram inseridos no formulário. 
+* **DICA:** Para ver os dados armazenandos no localstorage, aperte a tecla (F12) no navegador, na parte superir clique em (application), na parte esquerda procure a opção (storage) e clique em Local Storage, por fim clique na aba http://.... e poderá visualizar os dados que foram inseridos no formulário. 
