@@ -10,6 +10,11 @@ const form = document.querySelector('#form')
 const button = document.querySelector('.enviar')
 
 
+
+
+
+
+
 //Ao clicar no botão enviar, todas as validações serão feitas ao mesmo tempo, através de um ouvinte de eventos (click)
 button.addEventListener('click', function(event) {
     event.preventDefault();
@@ -18,6 +23,7 @@ button.addEventListener('click', function(event) {
 
     console.log('Botão clicado!');
 
+    //Validações
     validanome () 
     validaemail ()
     validarg ()
@@ -26,8 +32,34 @@ button.addEventListener('click', function(event) {
 
     validacheck () 
 
+    //Objeto que receberá os dados
+    const usuario = { 
+        nome: `${campos[0].value}`, 
+        email: `${campos[1].value}`, 
+        RG: `${campos[2].value}`, 
+        CPF: `${campos[3].value}`, 
+        Nascimento: `${campos[4].value}` 
+    };
 
+    //Armazenando o objeto junto com os dados para o localstorage
+    localStorage.setItem("Cadastro", JSON.stringify(usuario))
+
+
+    campos[0].value = ""
+    campos[1].value = ""
+    campos[2].value = ""
+    campos[3].value = ""
+    campos[4].value = ""
   });
+
+
+
+  
+
+
+ 
+
+  
 
 
 
