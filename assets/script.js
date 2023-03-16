@@ -9,7 +9,7 @@ const emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 const form = document.querySelector('#form')
 const button = document.querySelector('.enviar')
 
-
+let erro
 
 
 
@@ -19,9 +19,7 @@ const button = document.querySelector('.enviar')
 button.addEventListener('click', function(event) {
     event.preventDefault();
 
-    console.clear()
-
-    console.log('Botão clicado!');
+    
 
     //Validações
     validanome () 
@@ -29,9 +27,9 @@ button.addEventListener('click', function(event) {
     validarg ()
     validaCPF ()
     validaIdade ()
-
     validacheck () 
 
+    
     //Objeto que receberá os dados
     const usuario = { 
         nome: `${campos[0].value}`, 
@@ -41,15 +39,26 @@ button.addEventListener('click', function(event) {
         Nascimento: `${campos[4].value}` 
     };
 
-    //Armazenando o objeto junto com os dados para o localstorage
-    localStorage.setItem("Cadastro", JSON.stringify(usuario))
+
+    // Os dados serão enviados apenas na ausência de erros
+    if (erro == "sem erro") {
+
+        //Armazenando o objeto junto com os dados para o localstorage
+        localStorage.setItem("Cadastro", JSON.stringify(usuario))
 
 
-    campos[0].value = ""
-    campos[1].value = ""
-    campos[2].value = ""
-    campos[3].value = ""
-    campos[4].value = ""
+            //
+        campos[0].value = ""
+        campos[1].value = ""
+        campos[2].value = ""
+        campos[3].value = ""
+        campos[4].value = ""
+
+        
+                
+    }
+    console.log(erro)
+   
   });
 
 
@@ -68,6 +77,7 @@ button.addEventListener('click', function(event) {
 function aplicaErro(index) {
     campos[index].style.border = '2px solid #e63636'
     spans[index].style.display = 'block'
+    erro = "Existem erros, verifique"
 }
 
 
@@ -77,6 +87,7 @@ function aplicaErro(index) {
 function removeErro (index) {
     campos[index].style.border = ''
     spans[index].style.display = 'none'
+    erro = "sem erro"
 }
 
 
