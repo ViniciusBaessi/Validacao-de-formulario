@@ -101,7 +101,12 @@ function validanome () {
     }
 }
 
-//Aplica uma validação com base no REGEX criado para o email e retorna um erro caso o dado não esteja em conformidade
+/*
+
+Aplica uma validação com base no REGEX criado para o email. 
+Em seguida, retorna um erro caso o dado não esteja em conformidade.
+
+*/
 function validaemail () {
     if(!emailRegex.test(campos[1].value)){
         aplicaErro(1)
@@ -254,3 +259,22 @@ function validacheck () {
     }
 
 }
+
+
+
+var Valor1 = 10;
+
+var Valor2 = 20;
+
+
+
+
+function Soma (x, y) {
+
+    var Resultado = x + y;
+    return Resultado;
+}
+
+
+Soma (Valor1, Valor2);
+
