@@ -136,6 +136,12 @@ function digito2(cpf) {
 
 // Valida a idade
 function validaIdade() {
+    // Verifica se o campo de data está vazio
+    if (!campos[4].value) {
+        aplicaErro(4);
+        return; // Sai da função se o campo estiver vazio
+    }
+
     const datanasc = new Date(campos[4].value);
     datanasc.setDate(datanasc.getDate() + 1);
     const dataatual = new Date();
@@ -156,3 +162,6 @@ function validacheck() {
         removeErro(5);
     }
 }
+
+
+
